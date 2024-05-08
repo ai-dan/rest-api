@@ -1,0 +1,203 @@
+[
+  {
+    "request_url": "http://localhost:8080/User/5",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "Look at an existing user"
+  },
+  {
+    "request_url": "http://localhost:8080/Recipe/2",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "Look at an existing recipe"
+  },
+  {
+    "request_url": "http://localhost:8080/User/",
+    "request_type": "POST",
+    "request_body": {
+      "firstName": "Addy",
+      "lastName": "B",
+      "id": 99,
+      "email": "addison1.boyer@umontana.edu"
+    },
+    "purpose": "Create a new user"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/",
+    "request_type": "POST",
+    "request_body": {
+      "name": "Past Addy",
+      "id": 101,
+      "type": "history",
+      "owner": 99
+    },
+    "purpose": "Create a history"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/",
+    "request_type": "POST",
+    "request_body": {
+      "name": "Future Addy",
+      "id": 102,
+      "type": "history",
+      "owner": 99
+    },
+    "purpose": "Create a queue"
+  },
+  {
+    "request_url": "http://localhost:8080/Recipe/",
+    "request_type": "POST",
+    "request_body": {
+      "name": "The Addy B Special",
+      "id": 42,
+      "source": 99,
+      "base": 26,
+      "steps": [
+        {
+          "order": 1,
+          "id": 1,
+          "ingredients": [
+            {
+              "id": 8,
+              "quantity": 2,
+              "unit": "oz"
+            },
+            {
+              "id": 12,
+              "quantity": 1,
+              "unit": "oz"
+            },
+            {
+              "id": 14,
+              "quantity": 1,
+              "unit": "oz"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 20,
+              "quantity": 1,
+              "unit": ""
+            }
+          ],
+          "subrecipes": []
+        },
+        {
+          "order": 2,
+          "id": 2,
+          "ingredients": [
+            {
+              "id": 8,
+              "quantity": 1,
+              "unit": "splash"
+            }
+          ],
+          "equipment": [],
+          "subrecipes": []
+        },
+        {
+          "order": 3,
+          "id": 4,
+          "ingredients": [],
+          "equipment": [
+            {
+              "name": "Cocktail glass",
+              "quantity": 1,
+              "unit": "",
+              "id": 21
+            }
+          ],
+          "subrecipes": []
+        },
+        {
+          "order": 4,
+          "id": 2,
+          "ingredients": [
+            {
+              "id": 8,
+              "quantity": 2,
+              "unit": "splashes"
+            }
+          ],
+          "equipment": [],
+          "subrecipes": []
+        },
+        {
+          "order": 5,
+          "id": 7,
+          "ingredients": [],
+          "equipment": [],
+          "subrecipes": []
+        }
+      ]
+    },
+    "purpose": "Create a new recipe"
+  },
+  {
+    "request_url": "http://localhost:8080/Tag/",
+    "request_type": "POST",
+    "request_body": {
+      "name": "WARNING",
+      "id": 17,
+      "type": "restriction",
+      "detail": "This man is insane"
+    },
+    "purpose": "Create a new tag"
+  },
+  {
+    "request_url": "http://localhost:8080/Tag/42/17",
+    "request_type": "POST",
+    "request_body": {},
+    "purpose": "Tag the recipe"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/102",
+    "request_type": "POST",
+    "request_body": {
+      "id": 42,
+      "rank": 1,
+      "note": "Go big"
+    },
+    "purpose": "Add to queue"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/102",
+    "request_type": "POST",
+    "request_body": {
+      "id": 1,
+      "rank": 2,
+      "note": "Go home"
+    },
+    "purpose": "Add to queue"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/102/101",
+    "request_type": "PUT",
+    "request_body": {},
+    "purpose": "Pop queue to history"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/102/101",
+    "request_type": "PUT",
+    "request_body": {},
+    "purpose": "Pop queue to history"
+  },
+  {
+    "request_url": "http://localhost:8080/Collection/101",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "Check to see our history looks correct"
+  },
+  {
+    "request_url": "http://localhost:8080/Analytics/Popular/5",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "Test out an analytics function"
+  },
+  {
+    "request_url": "http://localhost:8080/Analytics/MostCooked/5",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "Test another analytics function"
+  }
+]

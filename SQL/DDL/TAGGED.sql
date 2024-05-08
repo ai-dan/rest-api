@@ -1,0 +1,10 @@
+--DROP TABLE IF EXISTS as141220.TAGGED;
+CREATE TABLE as141220.TAGGED(
+    Recipe_id INT,
+    Tag_id INT,
+    CONSTRAINT PK_TAGGED_RECIPE_ID_TAG_ID PRIMARY KEY (Recipe_id, Tag_id),
+    CONSTRAINT FK_TAGGED_RECIPE_ID_RECIPE_RECIPE_ID FOREIGN KEY (Recipe_id) REFERENCES as141220.RECIPE (Recipe_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FK_TAGGED_TAG_ID_TAG_TAG_ID FOREIGN KEY (Tag_id) REFERENCES as141220.TAG (Tag_id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION -- Would like to CASCADE here, but could create multiple cascade paths, so need to deal with this at the application level
+);

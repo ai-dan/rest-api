@@ -1,0 +1,11 @@
+--DROP TABLE IF EXISTS as141220.INCLUDES;
+CREATE TABLE as141220.INCLUDES(
+    Recipe_id INT,
+    Step_id INT,
+    [Order] INT,
+    CONSTRAINT PK_INCLUDES_RECIPE_ID_STEP_ID_ORDER PRIMARY KEY (Recipe_id, Step_id, [Order]),
+    CONSTRAINT FK_INCLUDES_RECIPE_ID_RECIPE_RECIPE_ID FOREIGN KEY (Recipe_id) REFERENCES as141220.RECIPE (Recipe_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FK_INCLUDES_STEP_ID_STEP_STEP_ID FOREIGN KEY (Step_id) REFERENCES as141220.STEP (Step_id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION, -- Would like to CASCADE here, but could create multiple cascade paths, so need to deal with this at the application level
+);
