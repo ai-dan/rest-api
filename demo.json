@@ -101,7 +101,6 @@
           "ingredients": [],
           "equipment": [
             {
-              "name": "Cocktail glass",
               "quantity": 1,
               "unit": "",
               "id": 21
@@ -134,6 +133,12 @@
     "purpose": "Create a new recipe"
   },
   {
+    "request_url": "http://localhost:8080/Recipe/42",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "View the recipe"
+  },
+  {
     "request_url": "http://localhost:8080/Tag/",
     "request_type": "POST",
     "request_body": {
@@ -149,6 +154,12 @@
     "request_type": "POST",
     "request_body": {},
     "purpose": "Tag the recipe"
+  },
+  {
+    "request_url": "http://localhost:8080/Recipe/42",
+    "request_type": "GET",
+    "request_body": {},
+    "purpose": "View the recipe"
   },
   {
     "request_url": "http://localhost:8080/Collection/102",
