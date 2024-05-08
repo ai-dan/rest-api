@@ -39,7 +39,7 @@
     "request_body": {
       "name": "Future Addy",
       "id": 102,
-      "type": "history",
+      "type": "queue",
       "owner": 99
     },
     "purpose": "Create a queue"
